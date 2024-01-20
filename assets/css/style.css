@@ -1,5 +1,5 @@
 body {
-    background-image: url("../images/backgrounds/darkPaperTexture.png");
+    background-image: url("../images/backgrounds/darkParchmentPaperTexture.jpg");
     background-size: cover;
 }
 
@@ -107,4 +107,10 @@ main {
     border-width: 5px;
     border-style: solid;
     border-color: var(--text) transparent transparent transparent;
+}
+
+@media (pointer: coarse) {
+    .tooltip:hover .tooltiptext {
+        visibility: hidden;
+    }
 }
