@@ -5,11 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#000000">
-    <!-- <meta name="google-site-verification" content=""> -->
     <meta name="author" content="Nojyto">
     <meta name="description" content="Personal visit card site.">
-    <meta name="key words" content="">
-    
+    <meta name="keywords" content="Skirkevičius, personal, visit card, portfolio, software engineer">
+
     <title>Nojus Skirkevičius | Visit card</title>
 
     <link rel="icon" href="./assets/images/logo/logo.svg">
@@ -18,25 +17,29 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+    
     <script src="./assets/js/script.js" defer></script>
 </head>
 <body>
+    <!-- Preload background -->
+    <img src="./assets/images/backgrounds/darkPaperTexture.png" style="display:none;"/>
     <main>
         <div class="wrapper">
-            <section class="logo-tray">
+            <div class="logo-tray">
                 <img class="logo" src="./assets/images/logo/logo.svg" alt="logo">
-            </section>
+            </div>
 
-            <section class="text-tray">
-                <h1>Nojus</h1>
-                <h1>Skirkevičius</h1>
-                <h3>Software engineer</h3>
-            </section>
+            <div class="text-tray">
+                <h1 id="FirstName">Nojus</h1>
+                <h1 id="LastName">Skirkevičius</h1>
+                <h3 id="Position">Software engineer</h3>
+            </div>
 
-            <section class="icon-tray">
-                <a href="#" onclick="copyEmailToClipboard()" class="tooltip">
-                    <span class="tooltiptext">Copy email</span>
+            <div class="icon-tray">
+                <a href="#"
+                   onclick="copyEmailToClipboard('nojusskirkevicius@gmail.com')"
+                   class="tooltip popup">
+                    <span class="tooltiptext" id="myPopup">Copy email</span>
                     <img class="icon" src="./assets/images/icons/emailIcon.svg" alt="email">
                 </a>
                 
@@ -55,7 +58,15 @@
                     <span class="tooltiptext">Github</span>
                     <img class="icon" src="./assets/images/icons/githubIcon.svg" alt="github">
                 </a>
-            </section>
+
+                <a href="./assets/data/Profile.pdf"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="tooltip">
+                    <span class="tooltiptext">Open CV</span>
+                    <img class="icon" src="./assets/images/icons/saveIcon.svg" alt="cv">
+                </a>
+            </div>
         </div>
     </main>
 </body>
