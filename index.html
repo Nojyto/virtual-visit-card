@@ -11,21 +11,23 @@
 
     <title>Nojus Skirkevičius | Visit card</title>
 
-    <link rel="icon" href="./assets/images/logo/logo.svg">
-    <link rel="shortcut icon" href="./assets/images/logo/logo.svg" type="image/x-icon">
+    <link href="./assets/images/logo/favicon-dark.ico" rel="shortcut icon"  media="(prefers-color-scheme: light)">
+    <link href="./assets/images/logo/favicon-light.ico" rel="shortcut icon" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="./assets/css/presets.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <script src="./assets/js/script.js" defer></script>
+    <script src="./assets/js/Vanta/three.min.js"></script>
+    <script src="./assets/js/Vanta/vanta.net.min.js"></script>
 </head>
 <body>
     <!-- Preload background -->
-    <img src="./assets/images/backgrounds/darkParchmentPaperTexture.jpg" style="display:none;" alt="bg" draggable="false">
-    <main>
+    <!-- <img src="./assets/images/backgrounds/darkParchmentPaperTexture.jpg" style="display:none;" alt="bg" draggable="false"> -->
+    <main class="fade-in" id="animated-background">
         <div class="wrapper">
-            <div class="logo-tray noselect">
+            <div class="logo-tray noselect pulse">
                 <img class="logo" src="./assets/images/logo/logo.svg" alt="logo" draggable="false">
             </div>
 
@@ -37,13 +39,13 @@
 
             <div class="icon-tray noselect">
                 <a href="#"
-                   onclick="copyEmailToClipboard('nojusskirkevicius@gmail.com')"
-                   class="tooltip popup">
-                    <span class="tooltiptext" id="myPopup">Copy email</span>
+                   onclick="javascript:copyTextToClipboard(this, 'nojusskirkevicius@gmail.com');"
+                   class="tooltip">
+                    <span class="tooltiptext">Copy email</span>
                     <img class="icon" src="./assets/images/icons/emailIcon.svg" alt="email" draggable="false">
                 </a>
                 
-                <a href="https://www.linkedin.com/in/nojusskirkevi%C4%8Dius/"
+                <a href="https://www.linkedin.com/in/nojusskirkevičius/"
                    target="_blank"
                    rel="noopener noreferrer"
                    class="tooltip">
@@ -65,6 +67,13 @@
                    class="tooltip">
                     <span class="tooltiptext">Open CV</span>
                     <img class="icon" src="./assets/images/icons/saveIcon.svg" alt="cv" draggable="false">
+                </a>
+
+                <a href="#"
+                    onclick="javascript:copyTextToClipboard(this, 'Kaunas, Lithuania');"
+                    class="tooltip">
+                    <span class="tooltiptext">Kaunas Lithuania</span>
+                    <img class="icon" src="./assets/images/icons/globeeuropeIcon.svg" alt="email" draggable="false">
                 </a>
             </div>
         </div>

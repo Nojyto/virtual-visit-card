@@ -1,13 +1,22 @@
-body {
+/* Background styles */
+/* body {
     background-image: url("../images/backgrounds/darkParchmentPaperTexture.jpg");
     background-size: cover;
-}
+} */
 
+/* Main container styles */
 main {
     width: 100%;
     height: 100%;
 }
 
+/* Fade-in animation */
+.fade-in {
+    animation: fadeIn 1s;
+    opacity: 1;
+}
+
+/* Wrapper styles */
 .wrapper {
     position: fixed;
     top: 40%;
@@ -19,11 +28,23 @@ main {
     flex-direction: column;
 }
 
+/* Pulse animation */
+.pulse {
+    animation: pulse 6s ease-in-out infinite;
+    animation-delay: 5s;
+}
+
+@keyframes pulse {
+    0%, 100% { filter: none; }
+    50% { filter: drop-shadow(5px 9px 3px var(--primary)); }
+}
+
+/* Logo tray styles */
 .logo-tray {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     height: 190px;
 }
 
@@ -33,36 +54,57 @@ main {
     }
 }
 
+/* Logo styles */
 .logo {
     width: auto;
     height: 100%;
     filter: invert(1) hue-rotate(95deg);
 }
 
-
+/* Text tray styles */
 .text-tray > h1 {
     width: 100%;
     line-height: 1;
+    filter: drop-shadow(3px 5px 2px var(--secondary));
 }
 
 .text-tray > h3 {
     width: 100%;
     line-height: 0.8;
     color: var(--accent);
+    filter: drop-shadow(3px 5px 2px var(--primary));
 }
 
-
+/* Icon tray styles */
 .icon-tray {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 20px;
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
+/* Icon styles */
 .icon {
     width: 60px;
     height: 60px;
     margin-right: 10px;
+    transition: filter 0.25s;
+}
+
+.icon:hover {
+    cursor: pointer;
+    filter: drop-shadow(3px 5px 2px var(--primary));
+    position: relative; 
+    top: -3px;
+}
+
+.icon:after {
+    filter: none;
 }
 
 @media (max-width: 768px) {
@@ -72,7 +114,7 @@ main {
     }
 }
 
-
+/* Tooltip styles */
 .tooltip {
     position: relative;
     display: inline-block;
@@ -88,7 +130,6 @@ main {
     border-radius: 6px;
     position: absolute;
     z-index: 1;
-
     top: 110%;
     left: 50%;
     margin-left: -65px;
@@ -109,8 +150,39 @@ main {
     border-color: var(--text) transparent transparent transparent;
 }
 
-@media (pointer: coarse) {
-    .tooltip:hover .tooltiptext {
-        visibility: hidden;
-    }
+/* Tooltip animation */
+.tooltip .icon, .tooltip .tooltiptext {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.tooltip:nth-child(1) > .icon, .tooltip:nth-child(1) .tooltiptext {
+    animation-delay: 0.4s;
+}
+
+.tooltip:nth-child(2) > .icon, .tooltip:nth-child(2) .tooltiptext {
+    animation-delay: 0.8s;
+}
+
+.tooltip:nth-child(3) > .icon, .tooltip:nth-child(3) .tooltiptext {
+    animation-delay: 1.2s;
+}
+
+.tooltip:nth-child(4) > .icon, .tooltip:nth-child(4) .tooltiptext {
+    animation-delay: 1.6s;
+}
+
+.tooltip:nth-child(5) > .icon, .tooltip:nth-child(4) .tooltiptext {
+    animation-delay: 2s;
+}
+
+.tooltip:nth-child(6) > .icon, .tooltip:nth-child(4) .tooltiptext {
+    animation-delay: 2.4s;
+}
+
+/* Fade-in animation keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to {  opacity: 1; }
 }

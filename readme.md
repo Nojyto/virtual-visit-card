@@ -7,17 +7,18 @@ This project aims to develop a virtual visit card, which serves as an online rep
 ## Project Structure
 
 ```txt
-assets/  
+assets/
     css/  
         presets.css  
         style.css  
+    data/
     images/  
         backgrounds/  
         icons/  
         logo/  
     js/  
+        ...
         script.js
-cname
 index.html
 license.md
 readme.md
