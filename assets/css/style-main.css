@@ -1,0 +1,155 @@
+/* Main */
+main {
+    width: 100%;
+    background-color: var(--background);
+    padding-top: 60px;
+    
+    background-image: url("../images/backgrounds/darkParchmentPaperTexture.jpg");
+    background-size: cover;
+}
+
+main > section {
+    background-color: var(--primary);
+    width: 60%;
+    padding: 30px;
+    margin-bottom: 45px;
+    border-radius: 15px;
+    box-shadow: 0 0 7px var(--darkaccent);
+}
+
+main > section > h3 > span {
+    content: "";
+    width: 33.3%;
+    height: 5px;
+    margin-top: 5px;
+    background: var(--gradient-accent-to-darker);
+    border-radius: 3px;
+}
+
+main > section > p {
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    main > section > h3 > span {
+        width: 40%;
+    }
+
+    main > section {
+        width: 87.5%;
+    }
+}
+
+
+/* Skill section */
+.skill-grid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.skill-item {
+    justify-content: center;
+    padding: 20px;
+    background: var(--secondary);
+    border-radius: 10px;
+    outline: 1px solid var(--darkaccent);
+}
+
+.service-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.service-header > img {
+    margin-right: 10px;
+    width: auto;
+    height: 50px;
+}
+
+.service-header > h4 {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 1024px)  {
+    .skill-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .skill-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-header > img {
+        height: 40px;
+    }
+}
+
+
+/* Portfolio section */
+.title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.title-wrapper > img {
+    width: 50px;
+    height: auto;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+li {
+    margin-left: 50px;
+    margin-bottom: 15px;
+    list-style: none;
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: left;
+}
+
+li > img {
+    width: 70px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.entry > h5 {
+    font-weight: 500;
+}
+
+.entry > span {
+    margin: 2px 0 5px 0;
+    color: var(--accent);
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .title-wrapper > img {
+        width: 35px;
+    }
+
+    li {
+        margin-left: 0px;
+    }
+    
+    li > img {
+        width: 50px;
+        margin-right: 10px;
+    }
+
+    .entry > span {
+        font-size: 0.75rem;
+    }
+}

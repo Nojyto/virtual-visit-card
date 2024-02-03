@@ -1,51 +1,14 @@
-/* Background styles */
-/* body {
-    background-image: url("../images/backgrounds/darkParchmentPaperTexture.jpg");
-    background-size: cover;
-} */
-
-/* Main container styles */
-main {
+/* Header */
+header {
     width: 100%;
     height: 100%;
+    background-color: var(--background);
 }
 
-/* Fade-in animation */
-.fade-in {
-    animation: fadeIn 1s;
-    opacity: 1;
-}
-
-/* Wrapper styles */
-.wrapper {
-    position: fixed;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: column;
-}
-
-/* Pulse animation */
-.pulse {
-    animation: pulse 6s ease-in-out infinite;
-    animation-delay: 5s;
-}
-
-@keyframes pulse {
-    0%, 100% { filter: none; }
-    50% { filter: drop-shadow(5px 9px 3px var(--primary)); }
-}
-
-/* Logo tray styles */
+/* Logo styles */
 .logo-tray {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 25px;
     height: 190px;
+    margin-bottom: 24px;
 }
 
 @media (max-width: 768px) {
@@ -54,14 +17,18 @@ main {
     }
 }
 
-/* Logo styles */
 .logo {
     width: auto;
     height: 100%;
     filter: invert(1) hue-rotate(95deg);
 }
 
+
 /* Text tray styles */
+.text-tray {
+    text-align: center;
+}
+
 .text-tray > h1 {
     width: 100%;
     line-height: 1;
@@ -72,7 +39,7 @@ main {
     width: 100%;
     line-height: 0.8;
     color: var(--accent);
-    filter: drop-shadow(3px 5px 2px var(--primary));
+    filter: drop-shadow(3px 5px 2px var(--darkaccent));
 }
 
 /* Icon tray styles */
@@ -88,17 +55,18 @@ main {
     animation-fill-mode: forwards;
 }
 
+
 /* Icon styles */
 .icon {
     width: 60px;
-    height: 60px;
-    margin-right: 10px;
+    height: 60px;       
+    margin: 1px 5px 1px 5px;
     transition: filter 0.25s;
 }
 
 .icon:hover {
     cursor: pointer;
-    filter: drop-shadow(3px 5px 2px var(--primary));
+    filter: drop-shadow(3px 5px 2px var(--darkaccent));
     position: relative; 
     top: -3px;
 }
@@ -109,10 +77,11 @@ main {
 
 @media (max-width: 768px) {
     .icon {
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
     }
 }
+
 
 /* Tooltip styles */
 .tooltip {
@@ -121,7 +90,8 @@ main {
 }
 
 .tooltip .tooltiptext {
-    visibility: hidden;
+    /* visibility: hidden; */
+    display: none;
     width: 120px;
     background-color: var(--secondary);
     color: var(--text);
@@ -132,11 +102,11 @@ main {
     z-index: 1;
     top: 110%;
     left: 50%;
-    margin-left: -65px;
+    margin-left: -60px;
 }
 
 .tooltip:hover .tooltiptext {
-    visibility: visible;
+    display: inline-block;
 }
 
 .tooltip .tooltiptext::after {
@@ -150,39 +120,59 @@ main {
     border-color: var(--text) transparent transparent transparent;
 }
 
+
 /* Tooltip animation */
-.tooltip .icon, .tooltip .tooltiptext {
+.tooltip .icon {
     animation-name: fadeIn;
     animation-duration: 1s;
     animation-fill-mode: both;
 }
 
-.tooltip:nth-child(1) > .icon, .tooltip:nth-child(1) .tooltiptext {
+.tooltip:nth-child(1) > .icon, .tooltip:nth-child(1) {
     animation-delay: 0.4s;
 }
 
-.tooltip:nth-child(2) > .icon, .tooltip:nth-child(2) .tooltiptext {
+.tooltip:nth-child(2) > .icon, .tooltip:nth-child(2)  {
     animation-delay: 0.8s;
 }
 
-.tooltip:nth-child(3) > .icon, .tooltip:nth-child(3) .tooltiptext {
+.tooltip:nth-child(3) > .icon, .tooltip:nth-child(3)  {
     animation-delay: 1.2s;
 }
 
-.tooltip:nth-child(4) > .icon, .tooltip:nth-child(4) .tooltiptext {
+.tooltip:nth-child(4) > .icon, .tooltip:nth-child(4) {
     animation-delay: 1.6s;
 }
 
-.tooltip:nth-child(5) > .icon, .tooltip:nth-child(4) .tooltiptext {
+.tooltip:nth-child(5) > .icon, .tooltip:nth-child(4) {
     animation-delay: 2s;
 }
 
-.tooltip:nth-child(6) > .icon, .tooltip:nth-child(4) .tooltiptext {
+.tooltip:nth-child(6) > .icon, .tooltip:nth-child(4) {
     animation-delay: 2.4s;
 }
 
-/* Fade-in animation keyframes */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to {  opacity: 1; }
+
+/* Scroll indicator */
+#scrollIndicator {
+    display: none;
+    position: absolute;
+    color: var(--text);
+    z-index: 99;
+
+    animation: MoveUpDown 1.5s linear infinite, fadeIn 1s;
+}
+
+#scrollIndicator > img {
+    width: 30px;
+    height: auto;
+}
+
+@keyframes MoveUpDown {
+    0%, 100% {
+        bottom: 10px;
+    }
+    50% {
+        bottom: 20px;
+    }
 }

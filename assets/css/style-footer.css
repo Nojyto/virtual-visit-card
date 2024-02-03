@@ -1,0 +1,46 @@
+/* Footer */
+footer {
+    background-color: var(--primary);
+    bottom: 0;
+    width: 100%;
+    height: 64px;
+}
+  
+footer > p {
+    font-size: 16px;
+}
+
+
+/* Scroll to top button */
+#toTopBtn {
+    bottom: 20px;
+    right: 30px;
+    display: none;
+    position: fixed;
+    border: none;
+    outline: none;
+    z-index: 99;
+    cursor: pointer;
+    color: var(--text);
+    background-color: var(--darkaccent);
+    padding: 10px;
+    border-radius: 25px;
+}
+
+#toTopBtn > img {
+    width: 20px;
+    height: 20px;
+    filter: invert(1) hue-rotate(95deg);
+}
+  
+#toTopBtn:hover {
+    background-color: var(--accent);
+}
+
+#toTopBtn:active {
+    background-color: var(--secondary);
+}
+
+#toTopBtn:active > img {
+    filter: none;
+}

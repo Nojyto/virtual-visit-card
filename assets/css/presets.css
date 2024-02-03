@@ -4,18 +4,17 @@
 
 /* Global CSS Variables */
 :root {
-    --text: hsl(0, 0%, 95%);
-    --background: hsl(0, 0%, 5%);
-    --primary: hsl(0, 63%, 31%);
-    --secondary: hsl(240, 6%, 15%);
-    --accent: hsl(0, 84%, 54%);
+    --text:      hsl(  0,  0%, 95%);
+    --background:hsl(  0,  0%,  5%);
+    --primary:   hsl(  0,1.6%, 12%);
+    --secondary: hsl(240,  6%, 15%);
+    --accent:    hsl(  0, 84%, 54%);
+    --darkaccent:hsl(  0, 63%, 31%);
+
+    --gradient-accent-to-darker: linear-gradient(to right, hsl(  0, 84%, 54%), hsl(  0, 63%, 31%));
         
     --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
-    --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
-    --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
-    --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
-    --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
-  
+
     --transition-1: 0.25s ease;
     --transition-2: 0.5s ease-in-out;
 }
@@ -39,11 +38,11 @@ html, body {
 	color: var(--text);
 	fill: var(--text);
 	background-color: var(--background);
-}
-
-body {
     font-family: 'Source Code Pro', monospace;
     font-weight: 400;
+
+    max-width: 100%;
+    /* overflow-x: hidden; */
 }
 
 
@@ -71,11 +70,21 @@ p {font-size: 1rem; /* 16px */}
     p {font-size: 1rem; /* 12px */}
 }
 
+@media (max-width: 480px) {
+    h1 {font-size: 2.369rem; /* 37.92px */}
+    h2 {font-size: 1.777rem; /* 28.48px */}
+    h3 {font-size: 1.333rem; /* 21.28px */}
+    h4 {font-size: 1rem; /* 16px */}
+    h5 {font-size: 0.75rem; /* 12px */}
+    small {font-size: 0.75rem; /* 10px */}
+    p {font-size: 0.75rem; /* 12px */}
+}
+
 
 /* Text Selection Styles */
 ::selection {
-    background: var(--primary);
-    color: var(--accent);
+    background: var(--darkaccent);
+    color: var(--background);
 }
 
 
@@ -106,7 +115,14 @@ p {font-size: 1rem; /* 16px */}
 }
 
 
-/* No Select Style */
+/* Common use classes */
+.flex-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .noselect {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -114,6 +130,12 @@ p {font-size: 1rem; /* 16px */}
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.box-shadow {
+    -webkit-box-shadow: 0 0 15px black;
+    box-shadow: 0 0 15px black;
+    color: var(--text);
 }
 
 
@@ -143,4 +165,26 @@ input, textarea {
     width: 100%;
     background: none;
     font: inherit;
+}
+
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 1s;
+    opacity: 1;
+}
+
+.pulse {
+    animation: pulse 6s ease-in-out infinite;
+    animation-delay: 5s;
+}
+
+@keyframes pulse {
+    0%, 100% { filter: none; }
+    50% { filter: drop-shadow(5px 9px 3px var(--darkaccent)); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to {  opacity: 1; }
 }
