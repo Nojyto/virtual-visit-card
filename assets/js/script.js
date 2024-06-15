@@ -26,7 +26,12 @@ const vantaDesktopSettings = {
 }
 
 
-AOS.init();
+AOS.init({
+    duration: 300,
+    easing: 'ease-in-out',
+    once: true
+});
+
 if (window.innerWidth < 760) {
     VANTA.NET({ ...vantaBasicSettings, ...vantaMobileSettings });
 } else {

@@ -123,6 +123,13 @@ p {font-size: 1rem; /* 16px */}
     align-items: center;
 }
 
+.flex-distribute {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
 .noselect {
     -webkit-touch-callout: none;
     -webkit-user-select: none;

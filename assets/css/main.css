@@ -135,6 +135,22 @@ li > img {
     font-weight: 400;
 }
 
+.tech-tile-wrapper {
+    padding: 0 20px;
+    margin-top: 30px;
+}
+
+.tech-tile {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tech-tile:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 15px var(--background);
+}
+
 @media (max-width: 768px) {
     .title-wrapper > img {
         width: 35px;
@@ -151,5 +167,14 @@ li > img {
 
     .entry > span {
         font-size: 0.75rem;
+    }
+
+    .tech-tile-wrapper {
+        padding: 0 10px;
+        gap: 8px;
+    }
+
+    .tech-tile {
+        max-width: 85%;
     }
 }
